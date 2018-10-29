@@ -1,0 +1,14 @@
+ pcb2gcode --vectorial \
+   --software linuxcnc --zero-start --tile-x 3 --tile-y 2 \
+   --front *-F.Cu.g* --front-output front.ngc \
+   --back *-B.Cu.g* --back-output back.ngc \
+   --drill *.drl --drill-output drill.ngc --drill-side back \
+   --outline *-Edge.Cuts.g* --outline-output cutout.ngc \
+   --metric --metricoutput --noconfigfile \
+   --zsafe 3 --zchange 50 \
+   --cut-feed 150 --cut-speed 6000 --cut-infeed 0.6 --zcut -1.5 \
+   --zbridges -1 --bridges 3 --bridgesnum 4 --cutter-diameter 2 \
+   --mill-feed 500 --mill-speed 6000 --zwork -0.1 --offset 0.1 \
+   --drill-feed 500 --drill-speed 6000 --zdrill -4 \
+   --spindown-time 2 --spinup-time 2
+
